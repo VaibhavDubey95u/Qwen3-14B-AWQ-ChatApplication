@@ -176,9 +176,15 @@ export default function App() {
       });
     } catch (e) {
       if (e.name !== "AbortError") {
+        let errorText = e.message;
+        if (errorText.includes("Failed to fetch")) {
+          errorText = "I couldn't connect to the AI model. Please check if the Base URL in settings is correct and ensure the server is currently running.";
+        } else {
+          errorText = `Error: ${errorText}`;
+        }
         updateMessages(id, msgs => {
           const copy = [...msgs];
-          copy[copy.length - 1] = { role: "assistant", content: `Error: ${e.message}`, streaming: false, isError: true };
+          copy[copy.length - 1] = { role: "assistant", content: errorText, streaming: false, isError: true };
           return copy;
         });
       } else {
