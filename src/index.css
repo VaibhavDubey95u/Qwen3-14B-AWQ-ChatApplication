@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; background: #080b14; color: #eef2ff; }
+button, input, textarea { font: inherit; }
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: #293149; border-radius: 999px; }
+::-webkit-scrollbar-track { background: transparent; }
+.markdownish p { margin: 0 0 .7rem; }
+.markdownish p:last-child { margin-bottom: 0; }
+.markdownish code { background:#111827; border:1px solid #27324a; padding:.12rem .35rem; border-radius:.35rem; }
+.markdownish pre { background:#080b14; border:1px solid #27324a; padding:1rem; border-radius:.75rem; overflow:auto; white-space:pre-wrap; }
+.markdownish h1, .markdownish h2, .markdownish h3, .markdownish h4 { font-weight: 600; margin: 1.5rem 0 0.5rem; color: #fff; }
+.markdownish h1 { font-size: 1.5rem; }
+.markdownish h2 { font-size: 1.25rem; }
+.markdownish h3 { font-size: 1.1rem; }
+.markdownish ul { list-style: disc; margin: 0.5rem 0 1rem 1.5rem; }
+.markdownish ol { list-style: decimal; margin: 0.5rem 0 1rem 1.5rem; }
+.markdownish li { margin-bottom: 0.25rem; }
+.markdownish strong { font-weight: 600; color: #fff; }
+.markdownish blockquote { border-left: 4px solid #374151; padding-left: 1rem; color: #9ca3af; margin: 1rem 0; }
+.markdownish a { color: #818cf8; text-decoration: underline; }
+.markdownish hr { border-color: #374151; margin: 1.5rem 0; }
+.markdownish table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+.markdownish th, .markdownish td { border: 1px solid #374151; padding: 0.5rem; }
