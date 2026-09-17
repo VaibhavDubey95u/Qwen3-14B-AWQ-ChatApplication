@@ -75,7 +75,7 @@ export default function Sidebar({ chats, activeId, onSelect, onNew, onDelete, on
             </button>
             
             {editingId !== chat.id && (
-              <div className={`mr-2 flex items-center shrink-0 transition-opacity ${menuOpenId === chat.id ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}>
+              <div className={`mr-2 flex items-center shrink-0 transition-opacity ${menuOpenId === chat.id ? "opacity-100" : "opacity-100 md:opacity-0 md:group-hover:opacity-100"}`}>
                 <button 
                   onClick={(e) => { e.stopPropagation(); setMenuOpenId(menuOpenId === chat.id ? null : chat.id); }} 
                   className="rounded p-1.5 text-slate-500 hover:bg-slate-700 hover:text-slate-200"
