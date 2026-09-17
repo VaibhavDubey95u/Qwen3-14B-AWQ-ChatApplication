@@ -51,12 +51,13 @@ function ThinkBlock({ content }) {
 export default function Message({ message }) {
   const [copied, setCopied] = useState(false);
   const user = message.role === "user";
+  const parsed = parseThink(message.content);
+
   const copy = async () => {
-    await navigator.clipboard?.writeText(message.content);
+    const textToCopy = parsed.filter(p => p.type === 'text').map(p => p.content).join('').trim();
+    await navigator.clipboard?.writeText(textToCopy);
     setCopied(true); setTimeout(() => setCopied(false), 1200);
   };
-
-  const parsed = parseThink(message.content);
 
   return (
     <div className={`mx-auto flex w-full max-w-4xl gap-3 px-4 py-5 ${user ? "" : "bg-slate-900/30"}`}>
